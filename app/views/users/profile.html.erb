@@ -1,0 +1,15 @@
+<h1 id="abc">Profile Page</h1>
+<div class="horizontal"></div>
+
+
+<p ><h3 id="pro">STUDENT ID</h3><%= @user.email %></p>
+<div class="hori"></div>
+<h3 id="card">STUDENT ID CARD</h3>
+<img src="<%= @user.avatar %>">
+<!-- <div class="horizontal"></div> -->
+
+
+<%= form_for @user, url: user_avatar_upload_path(@user.id), html: { multipart: true }, method: :post do |form| %>
+  <%= form.file_field :avatar %>
+  <%= form.submit %>
+<% end %>

@@ -1,0 +1,152 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$btn-clr: #3371C1;
+$del-btn: #c70000;
+$like-btn: #90c156;
+$cmt-btn: #cc3d3d;
+
+body {
+	background: #E8EAED;
+
+	#posts-home {
+		display: flex;
+		justify-content: center;
+		padding-top: 20px;
+
+		.groups {
+			width: 0%;
+			text-align: center;
+		}
+
+		.deewar-posts {
+			width: 50%;
+			margin: 0px 75px 0px 0px;
+
+			.new-post-form {
+				textarea {
+					width: 100%;
+					height: 8em;
+					padding: 12px 20px;
+					margin: 8px 0;
+					display: inline-block;
+					border: 1px solid #ccc;
+					border-radius: 4px;
+					box-sizing: border-box;
+				}
+
+				input[type=submit] {
+					width: 20%;
+					background-color: $btn-clr;
+					color: white;
+					padding: 14px 0;
+					border: none;
+					border-radius: 4px;
+					cursor: pointer;
+				}
+
+				input[type=submit]:hover {
+					background-color: $btn-clr*1.25;
+				}
+			}
+
+			.post {
+				// box-shadow: 1px 1px 1px 1px lightgrey;
+				ul {
+					list-style: none;
+					padding: 0;
+
+					li {
+						background: white;
+						border-radius: 12px;
+						padding: 5px 10px;
+						margin-bottom: 10px;
+					}
+
+					a {
+						color: inherit;
+						text-decoration: none;
+					}
+
+					#delete-btn {
+						font-size: 19px;
+						color: $del-btn;
+						float: right;
+					}
+
+					#delete-btn:hover {
+						color: $del-btn*1.5;
+						font-size: 21px;
+					}
+				}
+
+				.comments {
+					textarea {
+						background: white;
+						width: 50%;
+						padding: 12px 20px;
+						margin: 0;
+						display: inline-block;
+						border: 1px solid #ccc;
+						border-radius: 30px;
+					}
+
+					input[type=submit] {
+						float: right;
+						width: 20%;
+						background-color: $cmt-btn;
+						color: white;
+						padding: 14px 0;
+						border: none;
+						border-radius: 4px;
+						cursor: pointer;
+						margin: 10px 95px 0px 0px;
+					}
+					input[type=submit]:hover{
+
+					background-color: $cmt-btn*1.15;
+					}
+					.comments-list{
+						ul{
+							li{
+								 background: #e4e4e4;
+								 margin-top: 5px;
+							}
+						}
+						#cmt-delete-btn {
+							font-size: 15px;
+							color: $del-btn;
+							float: right;
+						}
+
+						#cmt-delete-btn:hover {
+							color: $del-btn*1.5;
+							font-size: 17px;
+						}
+
+					}
+				}
+
+				.like {
+					background: $like-btn;
+					color: white;
+					margin-bottom: 8px;
+					padding: 0;
+					display: inline-block;
+					border-radius: 5px;
+					padding: 5px 10px;
+				}
+				.like:hover{
+					background: $like-btn*1.15;
+
+				}
+			}
+		}
+
+		.friend-list {
+			width: 25%;
+			text-align: center;
+		}
+	}
+}

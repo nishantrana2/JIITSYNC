@@ -1,0 +1,69 @@
+<main id="posts-home">
+
+	<!-- <div class="groups">Group Links</div> -->
+
+	<div class="deewar-posts">
+		<div class="new-post-form">
+			<% if user_signed_in? %>
+			<%= form_for @post, remote: true do |f| %>
+				<%= f.label :content %>
+				<%= f.text_area :content,placeholder: "Write something here.." %>
+				<%= f.submit %>
+			<% end %>
+			<% end %>
+		</div>
+
+		<div class="post">
+			<ul id="posts-list" class="posts-list">
+				<% @posts.reverse.each do |p| %>
+				<!--  -->
+					<%= render 'post', post: p %>
+				<% end %>
+			</ul>
+
+
+		</div>
+		
+
+	</div>
+
+
+	<div class=".hide-small-screen">
+		<h2>Friends</h2>
+		<input id="user-search" type="text" placeholder="Search...">
+	</div>
+
+	<script type="text/javascript">
+	{
+	
+		 $( "#user-search" ).autocomplete({
+		      source: '/users/search',
+		      minLength: 2,
+		      select: function( event, ui ) {
+		      	 
+		      	// console.log(user_ids[]);
+		      	console.log(ui.item);
+		      	window.location = '/users/profile/' + ui.item.id;
+		      }
+		    });
+
+	}
+	
+
+
+	</script>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
